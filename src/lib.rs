@@ -43,9 +43,7 @@ pub fn run(config: Config) -> Result<(), Box<Error>> {
 
     if !path.is_dir() {
         return Err(From::from(format!("'{}' is not a directory", &config.root)));
+    } else {
+        search_and_destroy(path)
     }
-
-    search_and_destroy(path);
-
-    Ok(())
 }
